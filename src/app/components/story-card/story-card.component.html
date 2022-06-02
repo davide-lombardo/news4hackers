@@ -1,0 +1,18 @@
+<li *ngIf="story">
+    <div class="card">
+        <div class="card-content">
+            <a href={{story.url}} class="title is-4">
+                {{story.title}}
+            </a>
+            <div class="card-content">
+                <span class="subtitle is-6">
+                    {{story.score}} points by <a href="/">{{story.by}}</a>
+                </span>
+                <span class="subtitle is-6">
+                    {{ getTimePosted(story.time) }}
+                </span>
+                <hr>
+            </div>
+        </div>
+    </div>
+</li>

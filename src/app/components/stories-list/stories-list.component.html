@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="section">
+        <ul *ngIf="stories.length">
+            <app-story-card *ngFor="let story of stories" [story]="story"></app-story-card>
+        </ul>
+        <div class="section is-flex is-justify-content-center">
+            <button 
+                class="button is-link is-medium"
+                (click)="getStories()"
+            >
+                Load more
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<div class="relative">
+    <mat-progress-spinner 
+        class="section" 
+        [mode]="'indeterminate'"
+        *ngIf="loading$ | async"
+    >
+    </mat-progress-spinner>
+
+ 
+    <div *ngIf="!stories.length" class="container">
+        <p class="section">Whoops! something went wrong...</p>
+    </div>
+</div>
